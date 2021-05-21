@@ -1,0 +1,13 @@
+<app-header-admin></app-header-admin>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2 p-0">
+      <!-- *ngIf="showSideNavbar; " -->
+        <app-side-nav-admin [ngClass]="{'d-block':showSideNavbar,'d-none':!showSideNavbar}"></app-side-nav-admin>
+    </div>
+    <div class="col-lg-10">
+      <!-- admin child components will loads here -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

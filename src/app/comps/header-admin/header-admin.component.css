@@ -1,0 +1,28 @@
+nav a{
+     color:white;
+     text-decoration: none;
+     padding:0 12px;
+   }
+   
+   nav a:hover{
+    color: #FFC108;  
+   }
+   
+   nav a.active{
+     color:rgb(255, 247, 0);
+     font-weight: bold;
+   }
+
+   .headerIcon:hover{
+    color: #FFC108;  
+  }
+  
+   @media screen and (max-width: 992px){
+    .hideInMobile{
+      display: none;
+    }
+    .toggleNavOnMobile:active{
+      color: #FFC108;  
+    }
+    
+  }

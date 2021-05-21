@@ -1,0 +1,7 @@
+input.ng-touched.ng-invalid{
+     border:2px solid red;
+   }
+
+   .fontAwesome{
+     font-family: 'arial', fontAwesome,cursive;
+   }

@@ -1,0 +1,51 @@
+<div class="container-fluid">
+     <div class="container text-center p-5">
+       <h1 class="display-4">COMPANY
+         <i class="fa fa-angle-double-up text-success" aria-hidden="true"></i>
+         CRM
+       </h1>
+       <form #f="ngForm" (ngSubmit)="onSub()" class="col-lg-6 mx-auto">
+         <h5>Sign up new user</h5>
+         <div>
+           <input name="email" #inputEmail="ngModel" ngModel type="email" class="form-control"
+             placeholder="Enter Your email" required email>
+           <div *ngIf="inputEmail.touched && inputEmail.invalid" class="text-danger text-start">Enter valid mail</div>
+         </div>
+         <div>
+           <input name="password" #inputPass="ngModel" ngModel type="text" class="form-control mt-3"
+             placeholder="Enter Your password" required minlength="3">
+           <div *ngIf="inputPass.touched && inputPass.invalid" class="text-danger text-start">Enter valid password</div>
+         </div>
+         <div>
+           <input name="name" #inputName="ngModel" ngModel type="text" class="form-control mt-3" placeholder="Name..."
+             required minlength="3">
+           <div *ngIf="inputName.touched && inputName.invalid" class="text-danger text-start">Enter valid phone</div>
+         </div>
+         <div>
+           <input name="phone" #inputPhone="ngModel" ngModel type="text" class="form-control mt-3" placeholder="Phone..."
+             required minlength="3">
+           <div *ngIf="inputPhone.touched && inputPhone.invalid" class="text-danger text-start">Enter valid phone</div>
+         </div>
+   
+         <div class="mt-3 text-start">
+           <label>Your birth day:</label>
+           <input name="birth" #inputBirth="ngModel" ngModel type="date" class="form-control " placeholder="Birth..."
+             required minlength="3">
+           <div *ngIf="inputBirth.touched && inputBirth.invalid" class="text-danger text-start">Enter valid BIrthday</div>
+         </div>
+         <div>
+           <input name="city" #inputCity="ngModel" ngModel type="text" class="form-control mt-3" placeholder="City..."
+             required minlength="3">
+           <div *ngIf="inputCity.touched && inputCity.invalid" class="text-danger text-start">Enter valid City</div>
+         </div>
+         <div>
+           <button class="btn btn-info w-100 mt-3">Sign Up</button>
+         </div>
+         <div class="mt-5">
+          <a class="text-info text-decoration-none" routerLink="/">Already user? Click to Log in now</a>
+          <br>
+           CRM SYSTEM 2021-2031
+         </div>
+       </form>
+     </div>
+   </div>

@@ -1,0 +1,33 @@
+table i{
+     padding:0 8px;
+   }
+   
+
+   
+   table tbody tr:hover i{
+     cursor: pointer;
+     display: inline;
+     transition: .3s all ease-out;
+   }
+   table a{
+     color: #000;
+     text-decoration: none;
+   }
+   .slideOff {
+     transform: scale(0);
+    opacity: 0;
+    transition: .3s all ease-out;
+    }
+    
+    .slideOn {
+      transform: scale(1);
+      opacity: 1;
+      transition: .3s all ease-in;
+    }
+
+    @media screen and (max-width: 992px){
+      table tbody tr i{
+        display: none;
+        transition: .3s all ease-in;
+      }
+    }

@@ -1,0 +1,40 @@
+<div class="container">
+     <div class=" py-2 px-3 my-4" [style]="{background:'#DDD'}">
+       <h2>
+         <i class="fa fa-user" aria-hidden="true"></i>Customer info:</h2>
+     </div>
+     <form #f="ngForm"  class="col-lg-6">
+       <div class="row">
+         <div class="col-lg-6">
+           <label>*First name</label>
+           <input [value]="user.first" disabled name="first" type="text" class="form-control mt-2" >
+         </div>
+         <div class="col-lg-6">
+           <label >*Last name</label>
+           <input [value]="user.last" disabled name="last" type="text" class="form-control mt-2" >
+        </div>
+      
+         <div class="col-lg-6 mt-3">
+           <label>*Email</label>
+           <input [value]="user.email" disabled name="email"  type="text" class="form-control mt-2" >
+        </div>
+         <div class="col-lg-6 mt-3">
+           <label>*Phone</label>
+           <input [value]="user.phone" disabled name="phone" minlength="5"  type="tel" class="form-control mt-2" >
+     
+         </div>
+         <div class="col-12 mt-3">
+           <label  >Address</label>
+           <textarea  disabled  name="address" class="form-control mt-2" rows="2">{{user.address}}</textarea>
+         </div>
+         <div class="col-12 mt-3">
+           <label>Notes</label>
+           <textarea disabled  name="notes" class="form-control mt-2"  rows="4">{{user.notes}}</textarea>
+         </div>
+       </div>
+       <div class="mt-5 d-flex justify-content-between">
+         <a routerLink="/admin" class="btn btn-dark me-2">Back</a>
+         <!-- <button class="btn btn-info">Save</button> -->
+       </div>
+     </form>
+   </div>

@@ -1,0 +1,44 @@
+<div class="container">
+     <div class=" py-2 px-3 my-4" [style]="{background:'silver'}">
+       <h2>
+         <i class="fa fa-user" aria-hidden="true"></i> Edit Customer</h2>
+     </div>
+     <form #f="ngForm" (ngSubmit)="onSub()" class="col-lg-6">
+       <div class="row">
+         <div class="col-lg-6">
+           <label>*First name</label>
+           <input   name="first" [ngModel]="user.first" #firstInput="ngModel" required type="text" class="form-control mt-2" >
+           <small *ngIf="firstInput.touched && firstInput.invalid" class="text-danger">* You must fill your name</small>
+         </div>
+         <div class="col-lg-6">
+           <label >*Last name</label>
+           <input [ngModel]="user.last" name="last"  #lastInput="ngModel" required type="text" class="form-control mt-2" >
+           <small *ngIf="lastInput.touched && lastInput.invalid" class="text-danger">* You must fill your name</small>
+         </div>
+      
+         <div class="col-lg-6 mt-3">
+           <label>*Email</label>
+           <input [ngModel]="user.email" name="email"  #emailInput="ngModel" required email type="text" class="form-control mt-2" >
+           <small *ngIf="emailInput.touched && emailInput.invalid" class="text-danger">* Enter valid email</small>
+         </div>
+         <div class="col-lg-6 mt-3">
+           <label>*Phone</label>
+           <input [ngModel]="user.phone" name="phone"  #phoneInput="ngModel" required minlength="5"  type="tel" class="form-control mt-2" >
+           <small *ngIf="phoneInput.touched && phoneInput.invalid" class="text-danger">* Enter valid phone</small>
+           
+         </div>
+         <div class="col-12 mt-3">
+           <label  >Address</label>
+           <textarea  name="address"  #addressInput="ngModel" class="form-control" rows="2" [ngModel]="user.address"></textarea>
+         </div>
+         <div class="col-12 mt-3">
+           <label>Notes</label>
+           <textarea [ngModel]="user.notes"  name="notes"  #notesInput="ngModel" class="form-control" rows="4"></textarea>
+         </div>
+       </div>
+       <div class="mt-5 d-flex justify-content-between">
+         <a routerLink="/admin" class="btn btn-dark me-2">Cancel</a>
+         <button class="btn btn-warning">Update</button>
+       </div>
+     </form>
+   </div>

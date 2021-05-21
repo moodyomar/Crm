@@ -1,0 +1,24 @@
+<div class="container">
+     <h1>List of prod from firestore</h1>
+     <div class="row">
+       <div class="col-lg-6">
+         <div *ngFor="let item of prods_ar" class="border p-2">
+          <!-- <img src="{{item.image}}" alt="" class="w-25"> -->
+          <button class="btn btn-danger float-end" (click)="delProd(item.id)">X</button>
+          <h2>{{item.title}}</h2>
+          <h5>{{item.category}}</h5>
+          <h4>price:{{item.price}}</h4>
+         </div>
+       </div>
+       <div class="col-lg-6">
+         <h2>Add new prod Form</h2>
+         <form #f="ngForm" (ngSubmit)="addProd()">
+          <input type="text" class="form-control"
+          ngModel #nameInput="ngModel" name="title" required placeholder="enter name..." >
+          <input type="text" class="form-control"
+          ngModel #priceInput="ngModel" name="price" required placeholder="enter price...">
+          <button class="btn btn-success">Add new prod</button>
+        </form>
+       </div>
+     </div>
+   </div>

@@ -1,0 +1,43 @@
+<div class="container">
+  <div class=" p-2 my-4" [style]="{background:'silver'}">
+    <h2>Add Customer Form</h2>
+  </div>
+  <form #f="ngForm" (ngSubmit)="onSub()" class="col-lg-6">
+    <div class="row">
+      <div class="col-lg-6">
+        <label>*First name</label>
+        <input name="first" ngModel #firstInput="ngModel" required type="text" class="form-control mt-2">
+        <small class="text-danger" *ngIf="firstInput.touched && firstInput.invalid">You must fill your name</small>
+      </div>
+      <div class="col-lg-6">
+        <label>*Last name</label>
+        <input name="last" ngModel #lastInput="ngModel" required type="text" class="form-control mt-2">
+        <small class="text-danger" *ngIf="lastInput.touched && lastInput.invalid">You must fill your last</small>
+      </div>
+
+      <div class="col-lg-6 mt-3">
+        <label>*Email</label>
+        <input name="email" ngModel #emailInput="ngModel" required email type="text" class="form-control mt-2">
+        <small class="text-danger" *ngIf="emailInput.touched && emailInput.invalid">Enter a valid email</small>
+      </div>
+      <div class="col-lg-6 mt-3">
+        <label>*Phone</label>
+        <input name="phone" ngModel #phoneInput="ngModel" required minlength="5" type="tel" class="form-control mt-2">
+        <small class="text-danger" *ngIf="phoneInput.touched && phoneInput.invalid">Enter a valid phone</small>
+      </div>
+      <div class="col-12 mt-3">
+        <label  >Address</label>
+        <textarea  name="address" ngModel #addressInput="ngModel" class="form-control" rows="2"></textarea>
+      </div>
+      <div class="col-12 mt-3">
+        <label>Notes</label>
+        <textarea  name="notes" ngModel #notesInput="ngModel" class="form-control" rows="4"></textarea>
+      </div>
+      
+    </div>
+    <div class="mt-5 d-flex justify-content-between">
+      <a routerLink="/admin" class="btn btn-dark me-2">Cancel</a>
+      <button class="btn btn-info">Save</button>
+    </div>
+  </form>
+</div>
