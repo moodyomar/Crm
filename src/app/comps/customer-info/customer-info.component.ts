@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, snapshotChanges } from '@angular/fire/database';
 import { ActivatedRoute } from '@angular/router';
-import { utimes } from 'fs';
 
 @Component({
   selector: 'app-customer-info',
