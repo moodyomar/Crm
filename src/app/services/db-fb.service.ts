@@ -35,9 +35,14 @@ this.afs.list("customers/"+_id).remove();
       }
 
 getObserCustomer():any{
-// return the customers of the user , second parameter to list
+  if(localStorage["fb_user"]){
 let userId = localStorage["fb_user" || ""]
   return this.afs.list("customers",(ref => ref.orderByChild("user_id").equalTo(userId))).snapshotChanges();
+  }else {
+    return this.afs.list("customers").snapshotChanges();
+  }
+// return the customers of the user , second parameter to list
+
 }
 
 getCustomers():void{
