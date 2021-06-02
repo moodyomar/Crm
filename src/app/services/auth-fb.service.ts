@@ -34,8 +34,6 @@ export class AuthFbService {
   checkUserAuth(){
     this.afAuth.authState.subscribe((user:any) => {
       if(!user){
-        // לא מזהה יוזר
-        alert("You must login first to see the admin panel");
         this.router.navigate(["/"]);
       }
       else{

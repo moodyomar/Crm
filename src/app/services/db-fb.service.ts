@@ -34,16 +34,10 @@ this.afs.list("customers/"+_id).remove();
     this.afs.object("customers/"+_id).update(_body)
       }
 
-getObserCustomer():any{
-  if(localStorage["fb_user"]){
-let userId = localStorage["fb_user" || ""]
-  return this.afs.list("customers",(ref => ref.orderByChild("user_id").equalTo(userId))).snapshotChanges();
-  }else {
-    return this.afs.list("customers").snapshotChanges();
-  }
-// return the customers of the user , second parameter to list
-
-}
+      getObserCustomer(): any {
+        let userId = localStorage["fb_user"] || "";
+        return this.afs.list("customers", ref => ref.orderByChild("user_id").equalTo(userId)).snapshotChanges();
+      }
 
 getCustomers():void{
   this.getObserCustomer().subscribe((res:any) => {
