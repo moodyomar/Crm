@@ -13,9 +13,7 @@ export class SideNavAdminComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.showSideNavbar)
     this.showSideNavbar = this.dbFb.showSidebar;
-    console.log(this.showSideNavbar)
   }
 
 }

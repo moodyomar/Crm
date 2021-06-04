@@ -30,4 +30,14 @@ table i{
         display: none;
         transition: .3s all ease-in;
       }
+      table tbody tr i:active{
+        display: block;
+        transition: .3s all ease-in;
+      }
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
     }

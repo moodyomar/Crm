@@ -48,7 +48,6 @@ newItem.id = item.payload.key;
 this.customers_ar.push(newItem);
     })
     this.realCustomers_ar = [...this.customers_ar]
-    console.log(this.customers_ar)
   })
 }
 
