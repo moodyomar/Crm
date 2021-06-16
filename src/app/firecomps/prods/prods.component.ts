@@ -18,10 +18,7 @@ export class ProdsComponent implements OnInit {
   addProd():void{
     // console.log(this.myForm.form)
     if(this.myForm.form.status == "VALID"){
-      // אוסף כאובייקט את המוצר החדש לפי השמות של האינפוטים בטופס
-      // כמאפיינים
       let newProd = this.myForm.form.value;
-      // מוסיף למסד נתונים את המידע החדש
       this.afs.list("testdb").push(newProd);
     }
   }
@@ -33,20 +30,16 @@ if(confirm("Are you sure")){
   }
 
   getObserProds():any{
-    // מחזיר את כל המידע מהמסד נתונים מהקולקשיין טסט די בי באובסירבלב
-    // וגם מאזין ברגע שנניח מוסיפים ל מסד נתונים מידע חדש הוא גם מתעדכן אוטומטית
     return this.afs.list("testdb").snapshotChanges()
   }
 
-  // אוסף את המידע מהמסד נתונים של הפייר בייס ריל טיים
+
   getRealFoods():void {
     this.getObserProds().subscribe((res:any) => {
       // console.log(res);
       this.prods_ar.splice(0,this.prods_ar.length);
       res.map((item:any) => {
         let newItem = item.payload.val();
-        // חשוב לדעת מה האיי די בשביל מחיקה ועריכה בהמשך
-        // האיי די יתבסס על הקיי של הרשומה
         newItem.id = item.payload.key;
         this.prods_ar.push(newItem);
       
