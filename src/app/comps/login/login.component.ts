@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("fb_user",data.user.uid)
           this.route.navigate(["/admin"])
         }
-        console.log(data);
+        // console.log(data);
       }
       catch(err){
         // if there an error
@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
         }
         console.log(err);
       }
-      console.log(this.myForm.form.value);
     }
   }
 }

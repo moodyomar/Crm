@@ -41,7 +41,7 @@ export class AuthFbService {
           this.user[key] = user[key];
         }
       }
-      console.log(user);
+
     })
   }
 

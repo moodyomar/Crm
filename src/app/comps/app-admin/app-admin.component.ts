@@ -14,7 +14,6 @@ showSideNavbar:boolean = false;
   ngOnInit(): void {
     this.authSer.checkUserAuth();
     this.showSideNavbar = this.dbFb.showSidebar;
-    console.log(this.showSideNavbar)
   }
 
 
